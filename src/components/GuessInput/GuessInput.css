@@ -1,0 +1,30 @@
+.Form {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+}
+
+.Form input {
+    font-size: 16px;
+}
+
+.DefaultText {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.GuessSucess {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    color: green;
+}
+
+.GuessInvalid {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    color: red;
+}
+

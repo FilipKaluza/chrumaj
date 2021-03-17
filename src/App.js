@@ -6,6 +6,7 @@ import Mouth from "./components/Mouth/Mouth";
 
 const App = () => {
   return (
+
     <div className={classes.App}>
       <Mouth />
     </div>

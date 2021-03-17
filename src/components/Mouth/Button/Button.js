@@ -2,17 +2,19 @@ import React from 'react'
 
 import classes from "./Button.module.css"
 
-import Pear from '../../../assets/sounds/pear.mp3';
-import Apple from '../../../assets/sounds/apple.mp3';
-import Carrot from '../../../assets/sounds/carrot.mp3';
-
 
 const Button = (props) => {
 
-
+    let button = <button className={classes.Button}  onClick={props.clicked}> Chrúmať </button>
+    if (props.munching) {
+        button = <button className={classes.ButtonDisabled} disabled > Uhm mňamka </button>
+    }
+   
     return (
-        <button className={classes.Button} onClick={props.clicked}>{props.munching ? "Uhm, mňamka" : "Chrúmať"}</button>
+        <React.Fragment>
+            {button}
+        </React.Fragment>
     )
 }
 
-export default Button
+export default Button;
