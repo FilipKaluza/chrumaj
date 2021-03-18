@@ -1,0 +1,19 @@
+.Mouth {
+    height: 240px;
+    width: 60%;
+    border: 30px solid #000;
+    border-radius: 50%;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.MouthMunching {
+    animation: munchingMouth 1s;
+    animation-iteration-count: 10;
+}
+
+@keyframes munchingMouth {
+    0% {height: 240px}
+    50% {height: 120px}
+    100% {height: 240px}
+}

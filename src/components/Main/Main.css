@@ -1,0 +1,20 @@
+.MouthWrapper {
+    height: 300px;
+    width: 100vw;
+
+}
+
+.UpperTeethWrapper, .StartMunchingButton {
+    height: 120px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.StartMunchingButton {
+    width: 124px;
+    height: 80px;
+    margin: 20px auto;
+    padding: 0;
+}
+

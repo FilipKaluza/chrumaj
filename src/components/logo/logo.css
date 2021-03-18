@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Shojumaru&display=swap');
+
+.Logo {
+    width: 100vw;
+    height: 50px;
+    font-size: 40px;
+    font-family: 'Shojumaru', cursive;
+    text-align: center;
+    margin: 10px 0 0 0;
+}
