@@ -28,14 +28,14 @@ const GuessInput = (props) => {
 
     return(
         <React.Fragment>
+            {touched ? 
+            <div>
+                {guessValid ? <p className="GuessSucess"> Tss, dal si to ! je to {props.menu}. Nižšie sa dozvieš viac o mojej dnešnej laškotke :) </p> : <p className="GuessInvalid"> Tvoj tip "{guess}" nie je správny, skúšaj ďalje :)  </p>  }
+            </div> :
+            <p className="DefaultText"> Pochrúmaj a tipni si moju dnešnú laškotku :)</p>}
              <form className="Form">
                 {props.menu !== "" ? <input type="text" onChange={(e) => guessInputHandler(e)} value={guess} placeholder={props.munching ? "Vieš čo práve chrúmam ?" : "Tipni si moju dnešnú laškotku tu"} /> : null }
             </form>
-            {touched ? 
-            <div>
-                {guessValid ? <p className="GuessSucess"> Tss, dal si to ! je to {props.menu}. Nižšie sa dozvieš viac o mojej dnešnej laškotke :) </p> : <p className="GuessInvalid"> nie je to {guess} </p>  }
-            </div> :
-            <p className="DefaultText"> No tak, pochrúmaj a tipni si moju dnešnú laškotku :)</p>}
             { guessValid ?  
             <React.Fragment>
                 <Link className="ShowFactsBtn" to="factsAboutMenu" smooth={true} offset={0} duration={1000} > <button > Dozvi sa viac o mojej dnešnej pochúťke </button> </Link>

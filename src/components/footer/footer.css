@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Wallpoet&display=swap');
+
+#Footer {
+    background-color: #ccc;
+    width: 100%;
+    margin: 750px 0 0 0;
+    text-align: center;
+}
+
+.FooterDescription {
+    font-size: 16px;
+    padding: 15px 0;
+    margin: 0;
+}
+
+.LogoFooter {
+    display: inline-flex;
+    text-decoration: none;
+}
+
+.FirstPartLogo {
+    font-size: 36px;
+    color: #fff;
+    padding: 15px 0;
+    margin: 0;
+    font-family: 'Wallpoet', cursive;
+}
+
+.SecondPartLogo {
+    font-size: 36px;
+    color: #cc0000;
+    padding: 15px 0;
+    margin: 0;
+    font-family: 'Wallpoet', cursive;
+}
+
+.Copyright {
+    margin: 0;
+    padding: 15px 0;
+}
+
+@media (min-width: 750px) {
+    #Footer {
+        background-color: #ccc;
+        height: 30%;
+        width: 100%;
+        margin-top: 500px;
+        text-align: center;
+    }
+    
+    .FooterDescription {
+        font-size: 20px;
+        padding: 15px 0;
+        margin: 0;
+    }
+    
+    .LogoFooter {
+        display: inline-flex;
+        text-decoration: none;
+    }
+    
+    .FirstPartLogo {
+        font-size: 36px;
+        color: #fff;
+        padding: 15px 0;
+        margin: 0;
+        font-family: 'Wallpoet', cursive;
+    }
+    
+    .SecondPartLogo {
+        font-size: 36px;
+        color: #cc0000;
+        padding: 15px 0;
+        margin: 0;
+        font-family: 'Wallpoet', cursive;
+    }
+    
+    .Copyright {
+        margin: 0;
+        padding: 15px 0;
+    }
+}
+
+
+
+

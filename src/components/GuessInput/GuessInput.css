@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     height: 50px;
+    margin-bottom: 35px;
 }
 
 .Form input {
@@ -12,11 +13,14 @@
     font-size: 20px;
     display: flex;
     justify-content: center;
+    margin: 0 35px 35px 35px;
+    line-height: 26px;
 }
 
 .GuessSucess {
     font-size: 20px;
-    margin: 10px 30px;
+    margin: 0 35px 35px 35px;
+    line-height: 26px;
     display: flex;
     justify-content: center;
     color: green;
@@ -24,6 +28,8 @@
 
 .GuessInvalid {
     font-size: 20px;
+    margin: 0 35px 35px 35px;
+    line-height: 26px;
     display: flex;
     justify-content: center;
     color: red;
@@ -35,10 +41,11 @@
 }
 
 .ShowFactsBtn button {
-    height: 40px;
+    height: 80px;
     border: 2px solid #01c177;
+    background-color: #01c177;
     border-radius: 10px;
-    background: none;
+    color: #000;
     font-size: 14px;
 }
 
@@ -46,6 +53,55 @@
     color: #fff;
     background-color: #01c177;
     cursor: pointer;
+    color: 000;
 }
+
+@media (min-width: 750px) {
+    .Form {
+        height: 50px;
+        margin: 0 auto 30px auto;
+    }
+    
+    .Form input {
+        font-size: 16px;
+    }
+    
+    .DefaultText {
+        font-size: 20px;
+        margin: 0 auto 30px auto;
+    }
+    
+    .GuessSucess {
+        font-size: 20px;
+        margin: 0 auto 30px auto;
+        color: #01c177;
+    }
+    
+    .GuessInvalid {
+        font-size: 20px;
+        margin: 0 auto 30px auto;
+        color: red;
+    }
+    
+    .ShowFactsBtn {
+        margin: 0px auto 30px auto;
+    }
+    
+    .ShowFactsBtn button {
+        height: 70px;
+        border: 2px solid #01c177;
+        border-radius: 10px;
+        background: none;
+        font-size: 14px;
+    }
+    
+    .ShowFactsBtn button:hover {
+        color: #fff;
+        background-color: #01c177;
+        cursor: pointer;
+    }
+}
+
+
 
 
