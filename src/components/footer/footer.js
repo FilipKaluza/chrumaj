@@ -1,5 +1,4 @@
 import React from 'react';
-import Row from "antd/lib/row";
 import { HeartOutlined } from "@ant-design/icons";
 
 import "./footer.css";
