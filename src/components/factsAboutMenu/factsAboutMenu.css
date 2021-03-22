@@ -1,7 +1,7 @@
 #factsAboutMenu {
     height: 500px;
     width: 80vw;
-    margin: 35px auto 200px auto;
+    margin: 35px auto 50px auto;
     border: 2px solid #01c177;
     border-radius: 20px;
     background-color: #ccc;
@@ -10,7 +10,8 @@
 .ListOfFacts {
     width: 80%;
     list-style-type: none;
-    font-size: 20px;
+    font-size: 16px;
+    font-weight: 500;
     text-align: left;
     padding: 0;
     color: #000;
@@ -18,15 +19,34 @@
     padding: 25px 25px 0 25px ;
 }
 
+
+.ListOfFacts ul {
+    list-style-type: none;
+    padding: 0;
+
+}
+
 .ListOfFacts li {
     padding-bottom: 10px;
+}
+
+
+.Hastag {
+    text-align: center;
+    font-size: 16px;
+}
+
+.GoodByeText {
+    font-size: 12px;
+    margin: 0 25px;
+    text-align: center;
 }
 
 @media (min-width: 750px) {
     #factsAboutMenu {
         height: 500px;
-        width: 80%;
-        margin: 50px auto;
+        width: 100%;
+        margin: 50px auto 50px auto;
         border: 5px solid #01c177;
         border-radius: 20px;
         background-color: #ccc;
@@ -34,16 +54,29 @@
     
     .ListOfFacts {
         width: 80%;
-        list-style-type: none;
-        font-size: 26px;
+        font-size: 24px;
         text-align: left;
+        font-weight: 500;
         padding: 0;
         margin: 0;
         color: #000;
         padding: 25px 25px 0 25px ;
     }
+
+    .ListOfFacts ul {
+        list-style-type: none;
+        padding: 0;
+
+    }
     
     .ListOfFacts li {
         padding-bottom: 10px;
     }
+
+    .Hastag {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    
 }

@@ -1,6 +1,10 @@
 import React from 'react';
 import { HeartOutlined } from "@ant-design/icons";
 
+import ScrollAnimation from 'react-animate-on-scroll';
+
+import "animate.css/animate.min.css";
+
 import "./footer.css";
 
 const Footer = () => {

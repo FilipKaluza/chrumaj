@@ -9,7 +9,6 @@
     .App {
         width: 60vw;
         max-width: 800px;
-        margin: auto;
-        height: 100vh;
+        height: 100%;
     }
 }

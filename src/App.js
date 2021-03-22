@@ -1,5 +1,5 @@
 import React from 'react'
-import classes from './App.module.css';
+import "./App.css"
 
 // import components
 import Logo from "./components/logo/logo";
@@ -8,9 +8,10 @@ import Main from "./components/Main/Main";
 import Footer from "./components/footer/footer";
 
 const App = () => {
+
   return (
     <React.Fragment>
-      <div className={classes.App}>
+      <div className="App">
         <Logo />
         <Eyes />
         <Main />

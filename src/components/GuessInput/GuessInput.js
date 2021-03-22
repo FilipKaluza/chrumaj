@@ -5,6 +5,9 @@ import { Link } from "react-scroll";
 
 import FactsAboutMenu from "../factsAboutMenu/factsAboutMenu";
 
+import removeAccents from "remove-accents";
+import capitalize from "capitalize-first-letter";
+
 
 const GuessInput = (props) => {
 
@@ -21,6 +24,7 @@ const GuessInput = (props) => {
     const guessInputHandler = (e) => {
         let updatedGuess = {...guess} // copy old state
         updatedGuess = e.target.value
+        updatedGuess = removeAccents(capitalize(updatedGuess)); // remove accents and upperCase first letter for better checkvalidity 
         checkValidity(updatedGuess)
         setGuess(updatedGuess)
         setTouched(true)
@@ -39,7 +43,7 @@ const GuessInput = (props) => {
             { guessValid ?  
             <React.Fragment>
                 <Link className="ShowFactsBtn" to="factsAboutMenu" smooth={true} offset={0} duration={1000} > <button > Dozvi sa viac o mojej dnešnej pochúťke </button> </Link>
-                <FactsAboutMenu /> 
+                <FactsAboutMenu menu={props.menu} /> 
             </React.Fragment> : null} 
         </React.Fragment>
 

@@ -3,6 +3,7 @@ import React from 'react';
 import "./mouth.css";
 
 const Mouth = (props) => {
+    console.log("rendering mouth")
 
     let mouthCssClass = ["Mouth"]
 

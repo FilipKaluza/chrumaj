@@ -9,38 +9,33 @@ import LowerTeeth from "./lowerTeeth/lowerTeeth";
 import Button from "./button/button"
 import GuessInput from "../GuessInput/GuessInput";
 
-import Pear from '../../assets/sounds/pear.mp3';
-import Apple from '../../assets/sounds/apple.mp3';
-import Carrot from '../../assets/sounds/carrot.mp3';
+import {todaySound, identifier} from "../helpers/todaySound";
+
+import removeAccents from "remove-accents";
 
 import "./Main.css";
 
-const Main = React.memo(props => {
+const Main = (props) => {
 
     const [munching, setMunching] = useState(false)
-    const [choosedMenu, setChoosedMenu] = useState("")
+    const [choosedMenu, setChoosedMenu] = useState(null)
 
-    const [Mrkva] = useSound(Carrot)
-   
-    const myMenu = [Mrkva]
-    const myMenuString = ["Mrkva", "Jablko", "Hruška"]
-    
+    const [play] = useSound(todaySound);
+
     const startOrStopMunch = () => {
-        const chooseMyMenu = 0 /* Math.floor(Math.random() * myMenuString.length) */
-        let item = myMenu[chooseMyMenu];
+        play();
         setMunching(!munching)
-        item();
-        setChoosedMenu(myMenuString[chooseMyMenu])
+        setChoosedMenu(removeAccents(identifier))
     }
 
     console.log("Main rendering")
-    console.log(munching)
 
     if (munching) {
         setTimeout(() => {
             setMunching(false)
         }, 10000)
     }
+    console.log(choosedMenu)
 
     
     return(
@@ -58,6 +53,6 @@ const Main = React.memo(props => {
         </React.Fragment>
 
     );
-});
+};
 
 export default Main;
