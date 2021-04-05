@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import "./GuessInput.css";
 import { Link } from "react-scroll";
 
-import FactsAboutMenu from "../factsAboutMenu/factsAboutMenu";
+import FactsAboutMenu from "./FactsAboutMenu/FactsAboutMenu";
 
 import removeAccents from "remove-accents";
 import capitalize from "capitalize-first-letter";

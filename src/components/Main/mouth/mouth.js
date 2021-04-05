@@ -1,9 +1,12 @@
 import React from 'react';
 
+// imporch child components
+import UpperTeeth from "./upperTeeth/upperTeeth";
+import LowerTeeth from "./lowerTeeth/lowerTeeth";
+
 import "./mouth.css";
 
 const Mouth = (props) => {
-    console.log("rendering mouth")
 
     let mouthCssClass = ["Mouth"]
 
@@ -13,9 +16,13 @@ const Mouth = (props) => {
     }
 
     return (
-        <div className={mouthCssClass.join(" ")} > 
-            {props.children}
+        <div className="MouthWrapper">
+            <div className={mouthCssClass.join(" ")} > 
+                <UpperTeeth />
+                <LowerTeeth {...props} />
+            </div>
         </div>
+
     );
 };
 

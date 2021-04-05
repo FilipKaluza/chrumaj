@@ -1,11 +1,9 @@
 import React from 'react'
+import Row from "antd/lib/row";
 
-import "./button.css"
-
+import "./startMunchingButton.css"
 
 const Button = (props) => {
-
-    console.log("Button start munching rendering")
 
     let button = <button className="Button"  onClick={props.clicked}> Chrúmať </button>
     if (props.munching) {
@@ -13,10 +11,10 @@ const Button = (props) => {
     }
    
     return (
-        <React.Fragment>
+        <Row className="StartMunchingButton" >
             {button}
-        </React.Fragment>
+        </Row>
     )
 }
 
-export default Button;
+export default React.memo(Button);

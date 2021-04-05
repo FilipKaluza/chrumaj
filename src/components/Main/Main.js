@@ -1,57 +1,48 @@
-import React, { useState } from 'react';
-import Row from "antd/lib/row";
+import React, { useReducer, useCallback } from 'react';
 import useSound from 'use-sound';
 
 // import child components
 import Mouth from "./mouth/mouth";
-import UpperTeeth from "./upperTeeth/upperTeeth";
-import LowerTeeth from "./lowerTeeth/lowerTeeth";
-import Button from "./button/button"
+import Button from "./startMunchingButton/startMunchingButton"
 import GuessInput from "../GuessInput/GuessInput";
 
 import {todaySound, identifier} from "../helpers/todaySound";
 
 import removeAccents from "remove-accents";
 
-import "./Main.css";
+const mouthReducer = (currentState, action) => {
+    switch(action.type) {
+        case "STARTMUNCHING":
+            return { ...currentState, munching: true  }
+        case "STOPMUNCHING":
+            return {...currentState, munching: false}
+        default:
+            return currentState
+    }
+}
 
 const Main = (props) => {
-
-    const [munching, setMunching] = useState(false)
-    const [choosedMenu, setChoosedMenu] = useState(null)
+    const [munchingState, dispatch] = useReducer( mouthReducer, { munching: false, choosedMenu: removeAccents(identifier) } )
 
     const [play] = useSound(todaySound);
 
-    const startOrStopMunch = () => {
+    const startMunching = useCallback(() => {
         play();
-        setMunching(!munching)
-        setChoosedMenu(removeAccents(identifier))
-    }
+        dispatch({type: "STARTMUNCHING"})
+    }, [play]); // callback is necesarry because useSound causes re-renders, this callback help me prevent at least one re-render cycle of startMunchingButton
 
-    console.log("Main rendering")
-
-    if (munching) {
+    if (munchingState.munching) {
         setTimeout(() => {
-            setMunching(false)
+            dispatch({type: "STOPMUNCHING"})
         }, 10000)
     }
-    console.log(choosedMenu)
 
-    
     return(
         <React.Fragment>
-            <div className="MouthWrapper">
-                <Mouth munching={munching}>
-                    <UpperTeeth />
-                    <LowerTeeth munching={munching} />
-                </Mouth>
-            </div>
-            <Row className="StartMunchingButton" >
-                <Button clicked={startOrStopMunch} munching={munching} />
-            </Row>
-            <GuessInput menu={choosedMenu} munching={munching}/>
+            <Mouth munching={munchingState.munching} />
+            <Button clicked={startMunching} munching={munchingState.munching} />
+            <GuessInput menu={munchingState.choosedMenu} munching={munchingState.munching}/>
         </React.Fragment>
-
     );
 };
 
