@@ -1,4 +1,4 @@
-import React, { useReducer, useCallback } from 'react';
+import React, { useReducer, useCallback, useMemo } from 'react';
 import useSound from 'use-sound';
 
 // import child components
@@ -8,7 +8,7 @@ import GuessInput from "../GuessInput/GuessInput";
 
 import {todaySound, identifier} from "../helpers/todaySound";
 
-import removeAccents from "remove-accents";
+import removeAccents from "remove-accents"; 
 
 const mouthReducer = (currentState, action) => {
     switch(action.type) {
@@ -37,13 +37,18 @@ const Main = (props) => {
         }, 10000)
     }
 
+    const button = useMemo(() => {
+        return <Button clicked={startMunching} munching={munchingState.munching} />
+    }, [munchingState.munching, startMunching])
+
     return(
         <React.Fragment>
             <Mouth munching={munchingState.munching} />
-            <Button clicked={startMunching} munching={munchingState.munching} />
+            {button}
             <GuessInput menu={munchingState.choosedMenu} munching={munchingState.munching}/>
         </React.Fragment>
     );
 };
+
 
 export default Main;
